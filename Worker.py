@@ -31,12 +31,12 @@ food_gatherer_minimum_wood = 2
 food_gatherer_comfortable_wood = 5
 food_gatherer_maximum_wood = 8
 # weapons
-food_gatherer_minimum_weapons = 5
-food_gatherer_comfortable_weapons = 10
-food_gatherer_maximum_weapons = 15
+food_gatherer_minimum_weapons = 10
+food_gatherer_comfortable_weapons = 15
+food_gatherer_maximum_weapons = 20
 # gathering
-food_gatherer_maximum_food_gathered = 5
-food_gatherer_minimum_food_gathered = 2
+food_gatherer_maximum_food_gathered = 10
+food_gatherer_minimum_food_gathered = 0
 food_gatherer_maximum_wood_gathered = 2
 food_gatherer_minimum_wood_gathered = 0
 
@@ -51,14 +51,14 @@ lumberjack_minimum_wood = 3
 lumberjack_comfortable_wood = 5
 lumberjack_maximum_wood = 10
 # weapons
-lumberjack_minimum_weapons = 5
-lumberjack_comfortable_weapons = 10
-lumberjack_maximum_weapons = 15
+lumberjack_minimum_weapons = 10
+lumberjack_comfortable_weapons = 15
+lumberjack_maximum_weapons = 20
 # gathering
 lumberjack_maximum_food_gathered = 3
 lumberjack_minimum_food_gathered = 0
-lumberjack_maximum_wood_gathered = 5
-lumberjack_minimum_wood_gathered = 0
+lumberjack_maximum_wood_gathered = 7
+lumberjack_minimum_wood_gathered = 3
 
 # blacksmith
 # --------------
@@ -67,13 +67,15 @@ blacksmith_minimum_food = 10
 blacksmith_comfortable_food = 12
 blacksmith_maximum_food = 16
 # wood
-blacksmith_minimum_wood = 4
-blacksmith_comfortable_wood = 6
+blacksmith_minimum_wood = 1
+blacksmith_comfortable_wood = 4
 blacksmith_maximum_wood = 10
 # weapons
 blacksmith_minimum_weapons = 2
 blacksmith_comfortable_weapons = 4
 blacksmith_maximum_weapons = 10
+# crafting
+blacksmith_weapons_crafted = 3
 
 personalities= ["conservative", "balanced", "liberal"]
 conservative_base_money_desire = 50
@@ -393,7 +395,7 @@ class Blacksmith(Worker):
 
         if self.wood >= 2:
             self.wood -= 2
-            self.weapons += 1
+            self.weapons += blacksmith_weapons_crafted
 
     def sell_food(self):
         if self.money_desire() >= self.food_desire() and self.food > blacksmith_comfortable_food:
