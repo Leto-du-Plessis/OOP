@@ -20,3 +20,5 @@ Blacksmiths
 Food gatherers are very good at gathering food but bad at collecting wood. Cannot produce weapons.
 Lumberjacks are very good at gathering wood but bad at collecting food. Cannot produce weapons.
 Blacksmiths can only produce weapons. 
+
+asd
