@@ -21,4 +21,40 @@ Food gatherers are very good at gathering food but bad at collecting wood. Canno
 Lumberjacks are very good at gathering wood but bad at collecting food. Cannot produce weapons.
 Blacksmiths can only produce weapons. 
 
-asd
+Three types of personalities
+
+Conservative
+Balanced
+Liberal
+
+Conservative workers like to save their resources at the expense of profit today
+Balanced workers favour a balanced approach
+Liberal workers like to chase profit in the moment with little thought to saving resources
+
+Every day, there is a 5% chance that a particular worker is robbed. The chance that the worker successfuly fends off the attack is a 0 - 100% chance, linearly scaling with the number of weapons between 0 - 10. The weapons are consumed
+when an attempt to fend off an attack is made. If a worker is robbed, they lose 50% of everything they have (including weapons after the weapons used in the fend off attempt are consumed)
+
+Every worker has a hunger meter, from 0 - 100. Every day the hunger meter goes down by 20 - 30 (random). If the worker consumes uncooked food, they increase the hunger meter by 10 - 20 (random). 
+If they consume cooked food, they increase the hunger meter by 45 - 55 (random). 
+Cooked food consumes 1 food and 1 wood. If the hunger meter reaches 0, the worker dies. 
+
+Every worker can choose to perform one gathering/crafting task per day.
+Food gatherers have a chance to gather 0 - 10 food which is chosen randomly. The chance to gather greater amounts of food scales inversely with the weather factor (0-100). 
+Alternatively they have a chance to gather 0 - 2 wood.
+Lumberjacks have a chance to gather 0 - 5 wood which is chosen randomly. 
+Alternatively they have a chance to gather 0 - 3 food which is chosen randomly. The chance to gather greater amounts of food scales inversely with the weather factor (0-100)
+Blacksmiths can only produce 1 weapon per day. Producing a weapon consumes 2 wood. 
+
+Every worker can choose to put up any items for sale, at any price of their chosing. This goes to the global market. A worker can choose to purchase any item from the market if the 
+price is right. They will make these choices according to their personality.
+
+A worker with a hunger meter of 100 and an extra 5 food will consume that food and spawn a new worker.
+
+The weather factor is an integer from 0 - 100 with 0 being good weather and 100 being very bad weather. The weather every day increases or decreases randomly by an integer between +/- 10.
+
+The simulation should track the average price (in gold) of each resource bought per day that passes and the quantities of resources gathered and sold. 
+Also track the number of workers. 
+
+The exact parameters of the simulation should be adjustable, but should initially match the specification provided. Extra complications are welcome. 
+
+The simulation should randomly generated 100 workers to start with, with variable amounts of food, wood and weapons. The simulation should then run from that point. 
