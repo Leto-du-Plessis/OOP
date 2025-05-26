@@ -1,4 +1,5 @@
-# To appreciate what it is that object oriented programming can do for us, let's examine the alternative.
+# To appreciate what it is that object oriented programming can do for us, 
+# let's examine the alternative.
 # Let's say that we'd like to represent a user profile that tracks a username, password and a favourite movie.
 # The simplest approach would be to do the following:
 
@@ -8,7 +9,7 @@ favourite_movie = "Across the Spiderverse"
 
 print(f"{username} likes {favourite_movie}.")
 
-# job done.
+# Job done.
 # But now, what if we wanted to add another user?
 # If we simply do:
 
@@ -80,4 +81,3 @@ print(users[0] == users[3])
 # The point is, we may want more control over this behaviour. 
 # We could define a function which compares two users explicitely. However, we now have another function to carry around with us. 
 # Furthermore, we would then lose the functionality of the == operator. There is a way to maintain this functionality ... 
-
