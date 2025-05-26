@@ -1,0 +1,22 @@
+Assignment
+
+Create a simulation of a simplified market economy. 
+
+Specification:
+
+Four types of resources
+
+Gold: useless but used as exchange currency
+Food: required by all to survive
+Wood: required to prepare food and produce tools
+Weapons: required to defend against thieves
+
+Three types of workers
+
+Food gatherers
+Lumberjacks
+Blacksmiths
+
+Food gatherers are very good at gathering food but bad at collecting wood. Cannot produce weapons.
+Lumberjacks are very good at gathering wood but bad at collecting food. Cannot produce weapons.
+Blacksmiths can only produce weapons. 
