@@ -6,15 +6,15 @@ import typing
 base_food_price = 10
 min_food_price = 1
 max_food_price = 100
-base_food_amount = 10
-base_wood_price = 20
+base_food_amount = 20
+base_wood_price = 15
 min_wood_price = 1
 max_wood_price = 150
-base_wood_amount = 10
-base_weapon_price = 40
+base_wood_amount = 20
+base_weapon_price = 20
 min_weapon_price = 5
 max_weapon_price = 500
-base_weapon_amount = 5
+base_weapon_amount = 10
 
 class ResourceMarket:
 

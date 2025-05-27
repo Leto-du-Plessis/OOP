@@ -4,8 +4,8 @@ import Market
 
 # config
 
-num_days = 365
-num_workers = 1000
+num_days = 10000
+num_workers = 100
 
 class Simulation:
 
@@ -74,22 +74,22 @@ class Simulation:
                         weapon_price = self.market.get_weapon_price()
                         worker.gold -= weapon_price
                         self.workers[self.market.buy_weapon()].gold += weapon_price
-            worker.gather()
-            worker.robbery()
             worker.daily_hunger()
             if worker.hunger <= 0:
                 dead_worker_keys.append(key)
                 continue
             worker.eat()
+            worker.gather()
             if worker.breed():
                 new_workers += 1
-            sell_food = worker.sell_food()
+            worker.robbery()
+            sell_food = worker.sell_food(self.market.get_food_price())
             if sell_food:
                 self.market.set_food_listing({key: sell_food})
-            sell_wood = worker.sell_wood()
+            sell_wood = worker.sell_wood(self.market.get_wood_price())
             if sell_wood:
                 self.market.set_wood_listing({key: sell_wood})
-            sell_weapons = worker.sell_weapons()
+            sell_weapons = worker.sell_weapons(self.market.get_weapon_price())
             if sell_weapons:
                 self.market.set_weapon_listing({key: sell_weapons})
     
@@ -101,5 +101,6 @@ class Simulation:
             self.workers.update({self.next_worker_id: Simulation.generate_worker()})
             self.next_worker_id += 1
 
-        jobs = self.count_jobs()
-        print(f"Workers: {sum(jobs)}, Farmers: {jobs[0]}, Lumberjacks: {jobs[1]}, Blacksmiths: {jobs[2]}, Food: {self.market.get_food_amount()} @ ${self.market.get_food_price()}, Wood: {self.market.get_wood_amount()} @ ${self.market.get_wood_price()}, Weapons: {self.market.get_weapon_amount()} @ ${self.market.get_weapon_price()}.")
+        if self.num_days%5 == 0:
+            jobs = self.count_jobs()
+            print(f"Day: {num_days - self.num_days}, Workers: {sum(jobs)}, Farmers: {jobs[0]}, Lumberjacks: {jobs[1]}, Blacksmiths: {jobs[2]}, Food: {self.market.get_food_amount()} @ ${self.market.get_food_price()}, Wood: {self.market.get_wood_amount()} @ ${self.market.get_wood_price()}, Weapons: {self.market.get_weapon_amount()} @ ${self.market.get_weapon_price()}.")
