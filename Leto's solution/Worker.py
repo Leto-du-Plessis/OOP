@@ -14,10 +14,10 @@ min_eating_threshold = 50
 max_eating_threshold = 80
 cooked_food_increase = [45, 55]
 uncooked_food_increase = [10, 20]
-daily_hunger = [-20, -10]
+daily_hunger = [-15, -5]
 
 # robbery
-daily_robbery = 0.15
+daily_robbery = 0.05
 max_weapons_consumption = 10
 
 # food gatherer
@@ -249,6 +249,7 @@ class Food_Gatherer(Worker):
     def sell_weapons(self, weapon_price):
         if self.money_desire() >= self.weapon_desire() and self.weapons > food_gatherer_comfortable_weapons and weapon_price >= food_gatherer_minimum_weapon_price:
             weapons_for_sale = self.weapons - food_gatherer_comfortable_weapons
+            self.weapons -= weapons_for_sale
             return weapons_for_sale
         
     def buy_food(self):
@@ -341,6 +342,7 @@ class Lumberjack(Worker):
     def sell_weapons(self, weapon_price):
         if self.money_desire() >= self.weapon_desire() and self.weapons > lumberjack_comfortable_weapons and weapon_price >= lumberjack_minimum_weapon_price:
             weapons_for_sale = self.weapons - lumberjack_comfortable_weapons
+            self.weapons -= weapons_for_sale
             return weapons_for_sale
         
     def buy_food(self):
@@ -377,9 +379,9 @@ class Blacksmith(Worker):
         if self.food <= blacksmith_minimum_food:
             return 10
         elif self.food <= blacksmith_comfortable_food:
-            return min(10, 5 + weather_term + self.personality_term())
+            return min(10, 7 + weather_term + self.personality_term())
         elif self.food <= blacksmith_maximum_food:
-            return 3 + weather_term + self.personality_term()
+            return 6 + weather_term + self.personality_term()
         else:
             return 0 + weather_term + self.personality_term() * 2
         
@@ -428,6 +430,7 @@ class Blacksmith(Worker):
     def sell_weapons(self, weapon_price):
         if self.money_desire() >= self.weapon_desire() and self.weapons > blacksmith_comfortable_weapons and weapon_price >= blacksmith_minimum_weapon_price:
             weapons_for_sale = self.weapons - blacksmith_comfortable_weapons
+            self.weapons -= weapons_for_sale
             return weapons_for_sale
         
     def buy_food(self):
