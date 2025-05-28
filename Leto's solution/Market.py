@@ -1,6 +1,4 @@
-import numpy as np
 import numpy.random as rand
-import typing 
 
 # config
 base_food_price = 10
