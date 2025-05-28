@@ -7,7 +7,7 @@ import numpy.random as rand
 starting_food = [5, 10]
 starting_wood = [0, 10]
 starting_weapons = [0, 1]
-starting_gold = [50, 101]
+starting_gold = [500, 1001]
 
 # eating parameters
 min_eating_threshold = 50
@@ -40,7 +40,7 @@ food_gatherer_minimum_food_gathered = 1
 food_gatherer_maximum_wood_gathered = 2
 food_gatherer_minimum_wood_gathered = 0
 # selling
-food_gatherer_minimum_food_price = 3
+food_gatherer_minimum_food_price = 2
 food_gatherer_minimum_wood_price = 5
 food_gatherer_minimum_weapon_price = 10
 
@@ -61,8 +61,8 @@ lumberjack_maximum_weapons = 20
 # gathering
 lumberjack_maximum_food_gathered = 3
 lumberjack_minimum_food_gathered = 0
-lumberjack_maximum_wood_gathered = 10
-lumberjack_minimum_wood_gathered = 5
+lumberjack_maximum_wood_gathered = 6
+lumberjack_minimum_wood_gathered = 2
 # selling
 lumberjack_minimum_food_price = 5
 lumberjack_minimum_wood_price = 2

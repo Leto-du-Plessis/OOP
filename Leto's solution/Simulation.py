@@ -4,7 +4,7 @@ import Market
 
 # config
 
-num_days = 1000
+num_days = 2000
 num_workers = 100
 
 class Simulation:
@@ -29,7 +29,7 @@ class Simulation:
 
     def generate_worker():
 
-        worker_type = rand.choice([0,1,2], p=[0.5, 0.3, 0.2])
+        worker_type = rand.choice([0,1,2], p=[0.5, 0.4, 0.1])
         if worker_type == 0:
             return Worker.Food_Gatherer()
         if worker_type == 1:
