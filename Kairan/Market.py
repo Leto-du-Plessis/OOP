@@ -16,21 +16,20 @@ class Market:
             self.array[2][0].append(x)
     def price_weapons(self):
         count = len(self.array[2])
-        price=0
         if count > 100:
-            price == 1
+            price = 1
 
         elif  75 < count <= 100:
-            price == 2
+            price = 2
 
         elif 50 < count <= 75:
-            price == 3
+            price = 3
         
         elif 25 < count <= 50:
-            price == 4
+            price = 4
 
         else:
-            price ==5 
+            price = 5 
 
         self.array[2][1] .append(price)  
 
