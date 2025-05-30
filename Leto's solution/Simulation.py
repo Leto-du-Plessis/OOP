@@ -4,7 +4,7 @@ import Market
 
 # config
 
-num_days = 2000
+num_days = 1200
 num_workers = 100
 
 class Simulation:
