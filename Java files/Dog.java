@@ -32,7 +32,7 @@ class Border_Collie extends Dog {
         this.gender = gender;
     }
 
-    // Of course, we inhereit the bark() method from the parent class Dog. 
+    // Of course, we inherit the bark() method from the parent class Dog. 
 
     // Now we implement the abstract method description().
     public String description() {

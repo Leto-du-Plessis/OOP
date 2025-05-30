@@ -25,7 +25,8 @@ public class Test {
         System.out.println(dog1.description());
         System.out.println(dog2.description());
         dog1.bark();
-        dog2.bark_four_times();
+        dog2.bark();
+        dog3.bark_four_times();
         // Note as per last time, dog1 is both an instance of the Dog class and the Border_Collie class.
         System.out.println(dog1 instanceof Dog);
         System.out.println(dog1 instanceof Border_Collie);
