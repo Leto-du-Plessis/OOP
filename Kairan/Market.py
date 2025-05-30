@@ -1,5 +1,5 @@
-from Worker_classes import Worker
-from Worker_type import Farmer, Lumberjack, Blacksmith
+from Worker_classes import *
+from Worker_type import *
 import numpy as np
 
 class Market:
