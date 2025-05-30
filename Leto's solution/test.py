@@ -1,4 +1,3 @@
-import Worker
 import Simulation
 
 simulation = Simulation.Simulation()
