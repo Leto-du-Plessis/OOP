@@ -1,5 +1,5 @@
-from OOP.Kairan.Worker_classes import Worker
-from OOP.Kairan.Worker_type import Farmer, Lumberjack, Blacksmith
+from Worker_classes import Worker
+from Worker_type import Farmer, Lumberjack, Blacksmith
 import numpy as np
 
 class Market:

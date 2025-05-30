@@ -1,4 +1,4 @@
-from OOP.Kairan.Worker_classes import Worker
+from Worker_classes import Worker
 import numpy as np
 
 
