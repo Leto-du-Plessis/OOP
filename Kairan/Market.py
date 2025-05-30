@@ -10,9 +10,10 @@ class Market:
 
     array = [[[]for i in range(2)] for i in range (3)]
 
-    def sale(self):
-        if Worker.self.weapons > 10:
-            x = Worker.self.weapons - 10
+    def sale(self, worker):
+        if worker.weapons > 10:
+            x = worker.weapons - 10
+            worker.weapons -= x
             self.array[2][0].append(x)
     def price_weapons(self):
         count = len(self.array[2])
@@ -33,14 +34,16 @@ class Market:
 
         self.array[2][1] .append(price)  
 
-    def market(self):
-        Market.sale(self)
+    def market(self, worker):
+        Market.sale(self, worker)
         Market.price_weapons(self)
         print(self.array)
 
 
 
 man1 = Blacksmith(2, 10, 10, 15)
+
+market = Market(10, 10, 10)
 
 
 
@@ -51,6 +54,7 @@ while x != 100 or man1.alive() == False:
     if man1.alive() == True:
         man1.hunger()
         man1.eat()
+        market.market(man1)
     else:
         break    
     print(f'wood total', man1.wood)
