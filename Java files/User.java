@@ -66,4 +66,12 @@ public class User {
     }
 
     // Can you write a further overload method to extend the class method to work for String arguments? 
+
+    public String compare_movie_output(User other_user) { 
+        if (this.compare_movie(other_user)) {
+            return String.format("%s and %s like the same movie! \n", this.username, other_user.username);
+        } else {
+            return String.format("%s and %s do not like the same movie! \n", this.username, other_user.username);
+        }
+    }
 }
