@@ -13,8 +13,8 @@ public class User {
     
     // We now need to create a constructor method (analogous to our __init__() method in Python)
     // Note below, what were "type hints" in Python are now required type declarations. 
-    // Java cannot dynamically detect an argument's type. 
-    // Finally, note the use of this. instead of self. to reference internal fields.
+    // Java is fussy and we need to tell it exactly what type of variable to expect. 
+    // Finally, note the use of this. instead of self. to reference internal fields. This is only necessary if the method variables and internal fields have the same name. 
     public User(String username, String password, String favourite_movie) {
         this.username = username;
         this.password = password; 
@@ -23,8 +23,7 @@ public class User {
 
     // Just to quickly demonstrate method overloading. I can define two different constructors with different expected arguments.
     // When creating a User object, the correct constructor will be chosen depending on what arguments we pass.
-    // Note that I could also leave the password field unassigned, with the intention of having it potentially set later.
-    // But that is bad practice unless necessary.
+    // Note that I could also leave the password field unassigned, with the intention of having it potentially set later. But that is bad practice unless necessary.
     public User(String username, String favourite_movie) {
         this.username = username;
         this.password = "password";
